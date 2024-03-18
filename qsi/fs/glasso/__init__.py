@@ -290,6 +290,8 @@ def group_lasso(X, y, groups = None, group_reg = 100, l1_reg = 100,
         # subsampling_scheme=1,
         # supress_warning=True,
     )
+    
+    X=np.nan_to_num(X)
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=split, stratify=y, random_state=random_state)
 
