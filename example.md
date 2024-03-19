@@ -178,11 +178,11 @@ real-life financial and social data [@bib15]. In essence, the natural or social 
 Benford PMF is as follows (Table 2).
 
 <h4 align="center">Table 2: Leading digit PMF.</h4>
-<div align=center>
-| leading digit | 1    | 2    | 3    | 4   | 5   | 6   | 7   | 8   | 9   |
-|:-------------:|------|------|------|-----|-----|-----|-----|-----|-----|
-|      p        | 30.1%| 17.6%| 12.5%| 9.7%| 7.9%| 6.7%| 5.8%| 5.1%| 4.6%|
-</div>
+
+|  leading digit  |   1    |   2    |   3    |   4   |   5   |    6  |   7   |   8   |   9   |
+|:---------------:|--------|--------|--------|-------|-------|-------|-------|-------|-------|
+|       p         |  30.1% |  17.6% |  12.5% |  9.7% |  7.9% |  6.7% |  5.8% |  5.1% |  4.6% |
+
 
 The Benford class provides three examples to verify the Benford law (Figure 2). The first example uses the 20-year trading 
 volume data of AAPL (Apple Inc.). The second example uses the United Nations' international trading data. The last example 
@@ -226,8 +226,8 @@ $T^2$ test as examples.
 
 ### Pearson's Chi-Square Goodness-of-Fit Test
 
-Pearson's Chi-Square Goodness-of-Fit (GOF) test uses the following statistic. $$\label{deqn_ex9}
-    \chi^2=\sum_{j=1}^{k}\frac{(f_{j}-np_{j})^2}{np_{j}} \sim \chi^2(k-1)$$
+Pearson's Chi-Square Goodness-of-Fit (GOF) test uses the following statistic. 
+    $\chi^2=\sum_{j=1}^{k}\frac{(f_{j}-np_{j})^2}{np_{j}} \sim \chi^2(k-1)$
 
 When $n$ is large enough ($n \geq 50$), $\chi^2$ will follow the $\chi^2(k-1)$ distribution. As Pearson's chi-square 
 GOF test is non-parametric, there is no restriction on the population distribution. The Chisq_Gof_Test class provides 
@@ -286,8 +286,7 @@ distribution.</h4>
 
 The Hotelling's $T^2$ test compares the mean of two multivariate populations. Suppose we have two groups of samples from
 $N(\mu_{1},\sum)$ and $N(\mu_{2},\sum)$. They share the same covariance matrix $\sum$. The null hypothesis is 
-$H_{0}: \mu_{1}=\mu_{2}$ and the test statistic is: $$\label{deqn_ex14}
-    T^2=n(\overline{x}-\mu)^{T}S^{-1}(\overline{x}-\mu)$$
+$H_{0}: \mu_{1}=\mu_{2}$ and the test statistic is: $T^2=n(\overline{x}-\mu)^{T}S^{-1}(\overline{x}-\mu)$.
     
 $S=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})(x_{i}-\overline{x})^T$ is the grand covariance matrix.
 
