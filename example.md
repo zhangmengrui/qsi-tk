@@ -48,65 +48,43 @@ and undergraduate students.
 
 # Statement of need
 
-The Monte Carlo (MC) method is a powerful computer-simulated technique
-to study probability problems and complex systems. Based on LLN (Law of
-Large Numbers), MC can provide a convincing approximation for
-theoretical solutions, i.e., the observed frequency will asymptotically
-approach its theoretical probability($f \rightarrow p$). The early idea
-of using LLN can be traced back to the 18th century when French
-scientist Buffon proposed his famous needle problem. Since the 20th
-century, digital computers have made the MC method much more helpful and
-popular. MC has been used in many theoretical research and engineering
-domains, e.g., optics [@author:2001] [@bib2], radiation research [@bib3],
-nuclear physics [@bib4], medicine [@bib5], materials science [@bib6]
-[@bib7], quality management [@bib8], supply chain [@bib9], software
+The Monte Carlo (MC) method is a powerful computer-simulated technique to study probability problems and complex systems. 
+Based on LLN (Law of Large Numbers), MC can provide a convincing approximation for theoretical solutions, i.e., the observed 
+frequency will asymptotically approach its theoretical probability($f \rightarrow p$). The early idea of using LLN can be 
+traced back to the 18th century when French scientist Buffon proposed his famous needle problem. Since the 20th century, 
+digital computers have made the MC method much more helpful and popular. MC has been used in many theoretical research 
+and engineering domains, e.g., optics [@author:2001] [@bib2], radiation research [@bib3], nuclear physics [@bib4], 
+medicine [@bib5], materials science [@bib6] [@bib7], quality management [@bib8], supply chain [@bib9], software
 engineering [@bib10], etc.
 
-As higher education teachers, we found the MC method a powerful and
-promising didactic tool. This paper introduces an MC-aided educational
-toolkit for probability and statistics-related courses and studies. The
-project was initiated in 2019 and is now published as an open-source
-Python package(mc-tk). Highlights of the toolkit functionality include:
-(1) It provides an intuitive and versatile complement to theoretical
-math proofs. For example, it may be challenging to prove why the
-statistic used in a particular test follows a specific sampling
-distribution. Meanwhile, we can run MC simulations and plot the
-frequency histogram of the statistic to verify whether it is close to
-the theoretical distribution. This provides an easier and more intuitive
-alternative. (2) It includes historical and real-life experiments. For
-example, the package offers MC experiments for Buffon's needle problem,
-Galton board, the locker puzzle, Benford's law, etc. The rich case
-library has proved to be very helpful in statistical education. (3)
-Side-by-side visual comparison between empirical and theoretical
-distributions/results. (4) Flexible and tunable. The package follows the
-OOP (object-oriented programming) design allowing users to set many
-experiment-specific parameters in the derivative classes. This helps
-study asymptotic distributions or limits. For example, the locker puzzle
-allows users to increase the prisoner number and test its limit ( when
-$n\rightarrow\infty$ ). In the survival game experiment, users can set
-the per-round survival rate *p* to a very low value to get the
-asymptotic exponential distribution. The CLT (central limit theorem)
-class allows users to change the underlying distribution (e.g., uniform,
-Bernoulli, exponential) and the sample size to verify the theorem.
+As higher education teachers, we found the MC method a powerful and promising didactic tool. This paper introduces an 
+MC-aided educational toolkit for probability and statistics-related courses and studies. The project was initiated in 
+2019 and is now published as an open-source Python package(mc-tk). Highlights of the toolkit functionality include: 
+(1) It provides an intuitive and versatile complement to theoretical math proofs. For example, it may be challenging to 
+prove why the statistic used in a particular test follows a specific sampling distribution. Meanwhile, we can run MC 
+simulations and plot the frequency histogram of the statistic to verify whether it is close to the theoretical distribution. 
+This provides an easier and more intuitive alternative. (2) It includes historical and real-life experiments. For example, 
+the package offers MC experiments for Buffon's needle problem, Galton board, the locker puzzle, Benford's law, etc. 
+The rich case library has proved to be very helpful in statistical education. (3) Side-by-side visual comparison between 
+empirical and theoretical distributions/results. (4) Flexible and tunable. The package follows the OOP (object-oriented 
+programming) design allowing users to set many experiment-specific parameters in the derivative classes. This helps study 
+asymptotic distributions or limits. For example, the locker puzzle allows users to increase the prisoner number and test 
+its limit ( when $n\rightarrow\infty$ ). In the survival game experiment, users can set the per-round survival rate $p$ 
+to a very low value to get the asymptotic exponential distribution. The CLT (central limit theorem) class allows users 
+to change the underlying distribution (e.g., uniform, Bernoulli, exponential) and the sample size to verify the theorem.
 
-Until now, the toolkit has been used in the probability and statistics
-course and was well received by teachers and students. The following
-manuscript will provide details on the software functionality.
+Until now, the toolkit has been used in the probability and statistics course and was well received by teachers and students. 
+The following manuscript will provide details on the software functionality.
 
 # Overview
 
-Table 1 provides an overview of the toolkit's API
-(application programming interface). The toolkit is organized into three
-modules. The first module offers simulations for solving classical
-numeric or probability problems, e.g., Buffon's needle problem, the
-locker puzzle, etc. The second module provides simulated experiments to
-generate simulations for commonly used distributions, e.g., a sudden
-death game that produces the exponential distribution and the paper clip
-experiment that generates the Zipf distribution. For each MC experiment,
-both the observed histogram and theoretical density function are
-provided for comparison. The third module illustrates the sampling
-distribution of popular hypothesis test statistics. e.g., the $\chi^{2}$
-statistic in Pearson's chi-squared GOF test, ANOVA's F statistic, etc.
+Table 1 provides an overview of the toolkit's API (application programming interface). The toolkit is organized into three 
+modules. The first module offers simulations for solving classical numeric or probability problems, e.g., Buffon's needle 
+problem, the locker puzzle, etc. The second module provides simulated experiments to generate simulations for commonly 
+used distributions, e.g., a sudden death game that produces the exponential distribution and the paper clip experiment 
+that generates the Zipf distribution. For each MC experiment, both the observed histogram and theoretical density function 
+are provided for comparison. The third module illustrates the sampling distribution of popular hypothesis test statistics. 
+e.g., the $\chi^{2}$ statistic in Pearson's chi-squared GOF test, ANOVA's F statistic, etc.
 
 <h4 align="center">Table 1: An overview of the software modules and classes.</h4>
 
@@ -141,35 +119,27 @@ This section will showcase some classes provided by the software.
 
 ## Classes for Classical MC Experiments
 
-The "experiments" module provides MC simulation for classical
-probability problems, such as Buffon's needle experiment, the
-bi-directional game, the dice game, the locker puzzle, the Galton board
-experiment, the survival game, and the paper clip experiment. Here, we will demonstrate the locker puzzle.
+The "experiments" module provides MC simulation for classical probability problems, such as Buffon's needle experiment, the 
+bi-directional game, the dice game, the locker puzzle, the Galton board experiment, the survival game, and the paper clip 
+experiment. Here, we will demonstrate the locker puzzle.
 
 ### The Locker Puzzle
 
-The "hundred-prisoner puzzle" or "the locker puzzle" was first addressed
-by Danish scientist Peter Bro Miltersen [@bib12] [@bib13]. In this
-puzzle, there are 100 lockers containing No.1 to No.100. In each round,
-one prisoner will open 50 lockers. The game will continue if his/her
-number is found inside any of the opened lockers. Otherwise, the game is
-over, and all prisoners will be executed. The prisoners cannot
-communicate with each other during the game. What are the best strategy
+The "hundred-prisoner puzzle" or "the locker puzzle" was first addressed by Danish scientist Peter Bro Miltersen [@bib12] 
+[@bib13]. In this puzzle, there are 100 lockers containing No.1 to No.100. In each round, one prisoner will open 50 lockers. 
+The game will continue if his/her number is found inside any of the opened lockers. Otherwise, the game is over, and all 
+prisoners will be executed. The prisoners cannot communicate with each other during the game. What are the best strategy 
 and the highest survival probability?
 
-With no strategy (becomes a repeated Bernoulli experiment), the survival
-probability will be $(\frac{1}{2})^{100}$, which is virtually 0.
-According to the authors, the best strategy is the "circular chain,"
-i.e., the prisoner first opens the locker of their number then opens the
-locker whose number is inside the last locker. With this strategy, the
-survival probability equals the probability of creating circular chains
-no longer than 50. This probability is
+With no strategy (becomes a repeated Bernoulli experiment), the survival probability will be $(\frac{1}{2})^{100}$, which 
+is virtually 0. According to the authors, the best strategy is the "circular chain," i.e., the prisoner first opens the 
+locker of their number then opens the locker whose number is inside the last locker. With this strategy, the survival 
+probability equals the probability of creating circular chains no longer than 50. This probability is
 $p=1-\frac{1}{100!}\sum_{l=51}^{100}\left(\frac{1}{l}\times100!\right)=1-\sum_{l=51}^{100}\frac{1}{l}=1-0.688=0.312$.
-Furthermore, if we increase the total prisoner number, we can prove that
-this probability will converge to $1-ln2$ (0.307).
+Furthermore, if we increase the total prisoner number, we can prove that this probability will converge to $1-ln2$ (0.307).
 
-The Prisoners class simulates this experiment, and users can get the
-survival chance plot against different prisoner numbers(Figure 1).
+The Prisoners class simulates this experiment, and users can get the survival chance plot against different prisoner 
+numbers(Figure 1).
 
 ``` {.python language="python"}
 Prisoners(n=100,N=2000).run()
@@ -196,18 +166,15 @@ enough, this chance will approach $1-ln2$.</h4>
 
 ## Classes for Common Distributions
 
-The "distributions" module provides MC experiments to generate specific
-distributions (e.g., Poisson distribution and Benford distribution) and
-compare the observed MC results with the PDF/PMF of the theoretical
-distribution side-by-side. Here, we will demonstrate the Benford distribution.
+The "distributions" module provides MC experiments to generate specific distributions (e.g., Poisson distribution and 
+Benford distribution) and compare the observed MC results with the PDF/PMF of the theoretical distribution side-by-side. 
+Here, we will demonstrate the Benford distribution.
 
 ### Benford Distribution
 
-The Benford law, a.k.a. the Newcomb-Benford law or the first-digit law,
-describes the PMF of leading digits in many real-life financial and
-social data [@bib15]. In essence, the natural or social processes that
-follow the power laws (very common) often demonstrate this distribution.
-Financial audits often use it to check faked or manipulated data. The
+The Benford law, a.k.a. the Newcomb-Benford law or the first-digit law, describes the PMF of leading digits in many 
+real-life financial and social data [@bib15]. In essence, the natural or social processes that follow the power laws 
+(very common) often demonstrate this distribution. Financial audits often use it to check faked or manipulated data. The
 Benford PMF is as follows (Table 2).
 
 <h4 align="center">Table 2: Leading digit PMF.</h4>
@@ -217,12 +184,9 @@ Benford PMF is as follows (Table 2).
 |      p        | 30.1%| 17.6%| 12.5%| 9.7%| 7.9%| 6.7%| 5.8%| 5.1%| 4.6%|
 
 
-The Benford class provides three examples to verify the Benford law
-(Figure [2](#fig:benford mc){reference-type="ref"
-reference="fig:benford mc"}). The first example uses the 20-year trading
-volume data of AAPL (Apple Inc.). The second example uses the United
-Nations' international trading data. The last example uses the Fibonacci
-series.
+The Benford class provides three examples to verify the Benford law (Figure 2). The first example uses the 20-year trading 
+volume data of AAPL (Apple Inc.). The second example uses the United Nations' international trading data. The last example 
+uses the Fibonacci series.
 
 ``` {.python language="python"}
 Benford(data='stock',N=1000).run()
@@ -234,51 +198,41 @@ Benford(data='stock',N=1000).run()
     # N : how many MC experiments to run.
 ```
 
-According to Figure 2, all the examples fit well against the
-theoretical Benford distribution. We can use the Fibonacci series to
-explain the Benford law intuitively. The Fibonacci sequence represents
-how a population (e.g., rabbits) grows in a resource-unlimited
-environment. At a steady breeding speed, it takes much longer time to
-increase the population from 100 to 200 (need to increase by 100) than
-from 90 to 100 (only need to increase by 10). It also takes longer time
-than 200 to 300 because the population has grown bigger in the latter
-case. Therefore, it stays longer at smaller leading digits than the
-bigger ones.
+According to Figure 2, all the examples fit well against the theoretical Benford distribution. We can use the Fibonacci 
+series to explain the Benford law intuitively. The Fibonacci sequence represents how a population (e.g., rabbits) grows 
+in a resource-unlimited environment. At a steady breeding speed, it takes much longer time to increase the population 
+from 100 to 200 (need to increase by 100) than from 90 to 100 (only need to increase by 10). It also takes longer time 
+than 200 to 300 because the population has grown bigger in the latter case. Therefore, it stays longer at smaller leading 
+digits than the bigger ones.
 
 <figure id="fig:benford mc" style="text-align: center;">
-<p><img src="fig6-benford mc1.png" style="width:47.0%" alt="image" />
-<img src="fig6-benford mc2.png" style="width:47.0%" alt="image" /> <img
-src="fig6-benford mc3.png" style="width:47.0%" alt="image" /> <img
-src="fig6-benford mc4.png" style="width:47.0%" alt="image" /></p>
+<div align=center><img src="fig6-benford mc1.png" style="width:45.0%" alt="image" />
+<img src="fig6-benford mc2.png" style="width:45.0%" alt="image" /> <img
+src="fig6-benford mc3.png" style="width:45.0%" alt="image" /> <img
+src="fig6-benford mc4.png" style="width:45.0%" alt="image" /></div>
 <h4 align="center">Figure 2: Verify the Benford law using two real-life datasets and the
 Fibonacci series.</h4>
 </figure>
 
+
 ## Classes for Sampling Distributions
 
-The "samplings" module provides classes to verify the sampling of common
-hypothesis testing statistics, including the student's t test, Pearson's
-Chi-Squared Goodness-of-Fit(GOF) test, ANOVA(analysis of variance) test,
-the Kruskal-Wallis test, the Fligner-Killeen test, Bartlett's test, the
-sign test, the Cochran's Q test and the Hotelling's $T^2$ test. It also
-contains a class to demonstrate the Central Limit Theorem (CLT). In each
-class, we construct the test statistics and compare them with the
-theoretical sampling distributions. Here we present
-GOF test, ANOVA test and the Hotelling’s $T^2$ test as examples.
+The "samplings" module provides classes to verify the sampling of common hypothesis testing statistics, including the 
+student's t test, Pearson's Chi-Squared Goodness-of-Fit(GOF) test, ANOVA(analysis of variance) test, the Kruskal-Wallis 
+test, the Fligner-Killeen test, Bartlett's test, the sign test, the Cochran's Q test and the Hotelling's $T^2$ test. It also 
+contains a class to demonstrate the Central Limit Theorem (CLT). In each class, we construct the test statistics and 
+compare them with the theoretical sampling distributions. Here we present GOF test, ANOVA test and the Hotelling’s 
+$T^2$ test as examples.
 
 ### Pearson's Chi-Square Goodness-of-Fit Test
 
-Pearson's Chi-Square Goodness-of-Fit (GOF) test uses the following
-statistic. $$\label{deqn_ex9}
+Pearson's Chi-Square Goodness-of-Fit (GOF) test uses the following statistic. $$\label{deqn_ex9}
     \chi^2=\sum_{j=1}^{k}\frac{(f_{j}-np_{j})^2}{np_{j}} \sim \chi^2(k-1)$$
 
-When $n$ is large enough ($n \geq 50$), $\chi^2$ will follow the
-$\chi^2(k-1)$ distribution. As Pearson's chi-square GOF test is
-non-parametric, there is no restriction on the population distribution.
-The Chisq_Gof_Test class provides two population distributions. (1) The
-first is the Galton board (use the binominal population, Figure
-3). (2) The second is the dice game (use the uniform PMF, Figure 4). In
-both cases, the statistic histogram from the MC experiment is very close
+When $n$ is large enough ($n \geq 50$), $\chi^2$ will follow the $\chi^2(k-1)$ distribution. As Pearson's chi-square 
+GOF test is non-parametric, there is no restriction on the population distribution. The Chisq_Gof_Test class provides 
+two population distributions. (1) The first is the Galton board (use the binominal population, Figure 3). (2) The second 
+is the dice game (use the uniform PMF, Figure 4). In both cases, the statistic histogram from the MC experiment is very close
 to the theoretical $\chi^2(k-1)$ distribution.
 
 ``` {.python language="python"}
@@ -292,30 +246,27 @@ Chisq_Gof_Stat(underlying_dist='binom',k=8,sample_size=100,N=10000).run()
 ```
 
 <figure id="fig:galton gof" style="text-align: center;">
-<p><img src="fig8-galton gof1.png" style="width:45.0%" alt="image" />
-<img src="fig8-galton gof2.png" style="width:45.0%" alt="image" /></p>
+<div align=center><img src="fig8-galton gof1.png" style="width:45.0%" alt="image" />
+<img src="fig8-galton gof2.png" style="width:45.0%" alt="image" /></div>
 <h4 align="center">Figure 3:Use the Galton Board game to verify the statistic in
 Pearson’s chi-square GOF test.</h4>
 </figure>
 
 <figure id="fig:dice gof" style="text-align: center;">
-<p><img src="fig9-dice gof1.png" style="width:45.0%" alt="image" /> <img
-src="fig9-dice gof2.png" style="width:45.0%" alt="image" /></p>
+<div align=center><img src="fig9-dice gof1.png" style="width:45.0%" alt="image" /> <img
+src="fig9-dice gof2.png" style="width:45.0%" alt="image" /></div>
 <h4 align="center">Figure 4: Use the dice game to verify the statistic in Pearson’s
 chi-square GOF test.</h4>
 </figure>
 
 ### ANOVA
 
-ANOVA (analysis of variance) is a parametric mean test for multiple
-groups. Its null hypothesis $H_{0}$ is: $\mu_{1}=\mu_{2}=...=\mu_{k}$.
-ANOVA constructs the test statistic by splitting the total variance into
-treatment (between-class difference, MSTR) and noise (within-class
-variance, MSE). When $H_{0}$ is true, the ratio of MSTR and MSE will
-follow the F distribution, i.e., $F=\frac{MSTR}{MSE} \sim F(k-1,n-1)$.
+ANOVA (analysis of variance) is a parametric mean test for multiple groups. Its null hypothesis 
+$H_{0}$ is: $\mu_{1}=\mu_{2}=...=\mu_{k}$. ANOVA constructs the test statistic by splitting the total variance into 
+treatment (between-class difference, MSTR) and noise (within-class variance, MSE). When $H_{0}$ is true, the ratio of 
+MSTR and MSE will follow the F distribution, i.e., $F=\frac{MSTR}{MSE} \sim F(k-1,n-1)$.
 
-The Anova class will calculate the histogram of the F statistic observed
-from a multi-group normal sample (Figure 5).
+The Anova class will calculate the histogram of the F statistic observed from a multi-group normal sample (Figure 5).
 
 ``` {.python language="python"}
 Anova(k=10,n=10,N=10000).run()
@@ -325,28 +276,23 @@ Anova(k=10,n=10,N=10000).run()
 ```
 
 <figure id="fig:anova mc" style="text-align: center;">
-<p><img src="fig10-anova mc1.png" style="width:46.0%" alt="image" />
-<img src="fig10-anova mc2.png" style="width:46.0%" alt="image" /></p>
+<div align=center><img src="fig10-anova mc1.png" style="width:45.0%" alt="image" />
+<img src="fig10-anova mc2.png" style="width:45.0%" alt="image" /></div>
 <h4 align="center">Figure 5: Use MC to verify the ANOVA test statistic follows the F
 distribution.</h4>
 </figure>
 
 ### Hotelling's $T^2$ Test
 
-The Hotelling's $T^2$ test compares the mean of two multivariate
-populations. Suppose we have two groups of samples from
-$N(\mu_{1},\sum)$ and $N(\mu_{2},\sum)$. They share the same covariance
-matrix $\sum$. The null hypothesis is $H_{0}: \mu_{1}=\mu_{2}$ and the
-test statistic is: $$\label{deqn_ex14}
+The Hotelling's $T^2$ test compares the mean of two multivariate populations. Suppose we have two groups of samples from
+$N(\mu_{1},\sum)$ and $N(\mu_{2},\sum)$. They share the same covariance matrix $\sum$. The null hypothesis is 
+$H_{0}: \mu_{1}=\mu_{2}$ and the test statistic is: $$\label{deqn_ex14}
     T^2=n(\overline{x}-\mu)^{T}S^{-1}(\overline{x}-\mu)$$
+    
+$S=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})(x_{i}-\overline{x})^T$ is the grand covariance matrix.
 
-$S=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})(x_{i}-\overline{x})^T$
-is the grand covariance matrix.
-
-If the dimensionality $k = 1$, Hotelling's $T^2$ degenerates into the t
-distribution. When $k \geq 2$, it is a multivariate generalization of
-the t distribution. The Hotelling_T2_Test class verifies the $T^2$
-sampling distribution (Figure 6).
+If the dimensionality $k = 1$, Hotelling's $T^2$ degenerates into the t distribution. When $k \geq 2$, it is a multivariate 
+generalization of the t distribution. The Hotelling_T2_Test class verifies the $T^2$ sampling distribution (Figure 6).
 
 ``` {.python language="python"}
 Hotelling_T2_Test(n=50,k=2,N=1000).run()
@@ -356,32 +302,26 @@ Hotelling_T2_Test(n=50,k=2,N=1000).run()
 ```
 
 <figure id="fig:Hotelling T mc" style="text-align: center;">
-<p><img src="fig16-Hotelling T mc1.png" style="width:45.0%"
+<div align=center><img src="fig16-Hotelling T mc1.png" style="width:45.0%"
 alt="image" /> <img src="fig16-Hotelling T mc2.png" style="width:45.0%"
-alt="image" /></p>
+alt="image" /></div>
 <h4 align="center">Figure 6: The <span class="math inline"><em>T</em><sup>2</sup></span>
 statistic of Hotelling’s test.</h4>
 </figure>
 
 # Conclusions 
 
-This paper introduces a Monte-Carlo-based toolkit (mc-tk). We have
-published it as an open-sourced project to benefit a broad range of peer
-researchers and educators. The toolkit provides an empirical way to
-solve complex probability problems. It can intuitively illustrate the
-specific distribution that a particular experiment or test statistic
-follows. Since its debut, the toolkit has gained positive reviews from
-peer educators. It has been used for years in statistics and data
-science courses. In the next development milestone, we will (1) extend
-API to support more experiments and sampling distributions, and (2)
-provide a dedicated cross-platform desktop or web GUI (based on tk-inter
-or Flask) to make the toolkit more user-friendly.
+This paper introduces a Monte-Carlo-based toolkit (mc-tk). We have published it as an open-sourced project to benefit a 
+broad range of peer researchers and educators. The toolkit provides an empirical way to solve complex probability problems. 
+It can intuitively illustrate the specific distribution that a particular experiment or test statistic follows. Since its debut, 
+the toolkit has gained positive reviews from peer educators. It has been used for years in statistics and data science courses. 
+In the next development milestone, we will (1) extend API to support more experiments and sampling distributions, and (2) 
+provide a dedicated cross-platform desktop or web GUI (based on tk-inter or Flask) to make the toolkit more user-friendly.
 
 # Acknowledgment
 
-This work was supported by National Natural Science Foundation of China
-(62376249) and Ministry of Science and Technology of the People's
-Republic of China (2023YFD1000400).
+This work was supported by National Natural Science Foundation of China (62376249) and Ministry of Science and Technology 
+of the People's Republic of China (2023YFD1000400).
 
 # Data Availability Statement
 
