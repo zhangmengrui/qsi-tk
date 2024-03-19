@@ -188,8 +188,8 @@ Prisoners.asymptotic_analysis(ns=[250,500,750,1000,1250,1500,1750,2000],
 ```
 
 <figure id="fig:locker2" style="text-align: center;">
-<center><img src="fig1-locker2.png" style="width:45.0%"
-alt="image" /></center>
+<div align=center><img src="fig1-locker2.png" style="width:45.0%"
+alt="image" /></div>
 <h4 align="center">Figure 1: Survival chance against prisoner number ($n$). When $n$ is large
 enough, this chance will approach $1-ln2$.</h4>
 </figure>
