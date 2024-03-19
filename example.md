@@ -188,8 +188,8 @@ Prisoners.asymptotic_analysis(ns=[250,500,750,1000,1250,1500,1750,2000],
 ```
 
 <figure id="fig:locker2" style="text-align: center;">
-<p><img src="fig1-locker2.png" style="width:45.0%"
-alt="image" /></p>
+<center><img src="fig1-locker2.png" style="width:45.0%"
+alt="image" /></center>
 <h4 align="center">Figure 1: Survival chance against prisoner number ($n$). When $n$ is large
 enough, this chance will approach $1-ln2$.</h4>
 </figure>
@@ -272,7 +272,7 @@ Pearson's Chi-Square Goodness-of-Fit (GOF) test uses the following
 statistic. $$\label{deqn_ex9}
     \chi^2=\sum_{j=1}^{k}\frac{(f_{j}-np_{j})^2}{np_{j}} \sim \chi^2(k-1)$$
 
-When *n* is large enough ($n \geq 50$), $\chi^2$ will follow the
+When $n$ is large enough ($n \geq 50$), $\chi^2$ will follow the
 $\chi^2(k-1)$ distribution. As Pearson's chi-square GOF test is
 non-parametric, there is no restriction on the population distribution.
 The Chisq_Gof_Test class provides two population distributions. (1) The
