@@ -164,7 +164,7 @@ i.e., the prisoner first opens the locker of their number then opens the
 locker whose number is inside the last locker. With this strategy, the
 survival probability equals the probability of creating circular chains
 no longer than 50. This probability is
-$p=1-\frac{1}{100!}\sum_{l=51}^{100}(\frac{1}{l}\times100!)=1-\sum_{l=51}^{100}\frac{1}{l}=1-0.688=0.312$.
+$p=1-\frac{1}{100!}\sum_{l=51}^{100}\left(\frac{1}{l}\times100!\right)=1-\sum_{l=51}^{100}\frac{1}{l}=1-0.688=0.312$.
 Furthermore, if we increase the total prisoner number, we can prove that
 this probability will converge to $1-ln2$ (0.307).
 
@@ -190,8 +190,8 @@ Prisoners.asymptotic_analysis(ns=[250,500,750,1000,1250,1500,1750,2000],
 <figure id="fig:locker2">
 <p><img src="fig1-locker2.png" style="width:45.0%"
 alt="image" /></p>
-<figcaption style="text-align:center;">Figure 1: Survival chance against prisoner number (*n*). When *n* is large
-enough, this chance will approach $1-ln2$.</figcaption>
+<h4 align="center">Figure 1: Survival chance against prisoner number ($n$). When $n$ is large
+enough, this chance will approach $1-ln2$.</h4>
 </figure>
 
 ## Classes for Common Distributions
@@ -211,11 +211,11 @@ Financial audits often use it to check faked or manipulated data. The
 Benford PMF is as follows (Table 2).
 
 <h4 align="center">Table 2: Leading digit PMF.</h4>
-
+<div align="center">
 | leading digit | 1    | 2    | 3    | 4   | 5   | 6   | 7   | 8   | 9   |
 |---------------|------|------|------|-----|-----|-----|-----|-----|-----|
 |      p        | 30.1%| 17.6%| 12.5%| 9.7%| 7.9%| 6.7%| 5.8%| 5.1%| 4.6%|
-
+</div>
 
 The Benford class provides three examples to verify the Benford law
 (Figure [2](#fig:benford mc){reference-type="ref"
@@ -234,8 +234,7 @@ Benford(data='stock',N=1000).run()
     # N : how many MC experiments to run.
 ```
 
-According to Figure [2](#fig:benford mc){reference-type="ref"
-reference="fig:benford mc"}, all the examples fit well against the
+According to Figure 2, all the examples fit well against the
 theoretical Benford distribution. We can use the Fibonacci series to
 explain the Benford law intuitively. The Fibonacci sequence represents
 how a population (e.g., rabbits) grows in a resource-unlimited
@@ -251,16 +250,14 @@ bigger ones.
 <img src="fig6-benford mc2.png" style="width:47.0%" alt="image" /> <img
 src="fig6-benford mc3.png" style="width:47.0%" alt="image" /> <img
 src="fig6-benford mc4.png" style="width:47.0%" alt="image" /></p>
-<figcaption style="text-align:center;">Figure 2: Verify the Benford law using two real-life datasets and the
-Fibonacci series.</figcaption>
+<h4 align="center">Figure 2: Verify the Benford law using two real-life datasets and the
+Fibonacci series.</h4>
 </figure>
 
 ## Classes for Sampling Distributions
 
 The "samplings" module provides classes to verify the sampling of common
-hypothesis testing statistics(Table
-[\[tab:sampling\]](#tab:sampling){reference-type="ref"
-reference="tab:sampling"}), including the student's t test, Pearson's
+hypothesis testing statistics, including the student's t test, Pearson's
 Chi-Squared Goodness-of-Fit(GOF) test, ANOVA(analysis of variance) test,
 the Kruskal-Wallis test, the Fligner-Killeen test, Bartlett's test, the
 sign test, the Cochran's Q test and the Hotelling's $T^2$ test. It also
@@ -280,9 +277,7 @@ $\chi^2(k-1)$ distribution. As Pearson's chi-square GOF test is
 non-parametric, there is no restriction on the population distribution.
 The Chisq_Gof_Test class provides two population distributions. (1) The
 first is the Galton board (use the binominal population, Figure
-[3](#fig:galton gof){reference-type="ref" reference="fig:galton gof"}).
-(2) The second is the dice game (use the uniform PMF, Figure
-[4](#fig:dice gof){reference-type="ref" reference="fig:dice gof"}). In
+3). (2) The second is the dice game (use the uniform PMF, Figure 4). In
 both cases, the statistic histogram from the MC experiment is very close
 to the theoretical $\chi^2(k-1)$ distribution.
 
@@ -299,15 +294,15 @@ Chisq_Gof_Stat(underlying_dist='binom',k=8,sample_size=100,N=10000).run()
 <figure id="fig:galton gof">
 <p><img src="fig8-galton gof1.png" style="width:45.0%" alt="image" />
 <img src="fig8-galton gof2.png" style="width:45.0%" alt="image" /></p>
-<figcaption style="text-align:center;">Figure 3:Use the Galton Board game to verify the statistic in
-Pearson’s chi-square GOF test.</figcaption>
+<h4 align="center">Figure 3:Use the Galton Board game to verify the statistic in
+Pearson’s chi-square GOF test.</h4>
 </figure>
 
 <figure id="fig:dice gof">
 <p><img src="fig9-dice gof1.png" style="width:45.0%" alt="image" /> <img
 src="fig9-dice gof2.png" style="width:45.0%" alt="image" /></p>
-<figcaption style="text-align:center;">Figure 4: Use the dice game to verify the statistic in Pearson’s
-chi-square GOF test.</figcaption>
+<h4 align="center">Figure 4: Use the dice game to verify the statistic in Pearson’s
+chi-square GOF test.</h4>
 </figure>
 
 ### ANOVA
@@ -320,8 +315,7 @@ variance, MSE). When $H_{0}$ is true, the ratio of MSTR and MSE will
 follow the F distribution, i.e., $F=\frac{MSTR}{MSE} \sim F(k-1,n-1)$.
 
 The Anova class will calculate the histogram of the F statistic observed
-from a multi-group normal sample (Figure
-[5](#fig:anova mc){reference-type="ref" reference="fig:anova mc"}).
+from a multi-group normal sample (Figure 5).
 
 ``` {.python language="python"}
 Anova(k=10,n=10,N=10000).run()
@@ -333,8 +327,8 @@ Anova(k=10,n=10,N=10000).run()
 <figure id="fig:anova mc">
 <p><img src="fig10-anova mc1.png" style="width:46.0%" alt="image" />
 <img src="fig10-anova mc2.png" style="width:46.0%" alt="image" /></p>
-<figcaption style="text-align:center;">Figure 5: Use MC to verify the ANOVA test statistic follows the F
-distribution.</figcaption>
+<h4 align="center">Figure 5: Use MC to verify the ANOVA test statistic follows the F
+distribution.</h4>
 </figure>
 
 ### Hotelling's $T^2$ Test
@@ -352,9 +346,7 @@ is the grand covariance matrix.
 If the dimensionality $k = 1$, Hotelling's $T^2$ degenerates into the t
 distribution. When $k \geq 2$, it is a multivariate generalization of
 the t distribution. The Hotelling_T2_Test class verifies the $T^2$
-sampling distribution (Figure
-[6](#fig:Hotelling T mc){reference-type="ref"
-reference="fig:Hotelling T mc"}).
+sampling distribution (Figure 6).
 
 ``` {.python language="python"}
 Hotelling_T2_Test(n=50,k=2,N=1000).run()
@@ -367,8 +359,8 @@ Hotelling_T2_Test(n=50,k=2,N=1000).run()
 <p><img src="fig16-Hotelling T mc1.png" style="width:45.0%"
 alt="image" /> <img src="fig16-Hotelling T mc2.png" style="width:45.0%"
 alt="image" /></p>
-<figcaption style="text-align:center;">Figure 6: The <span class="math inline"><em>T</em><sup>2</sup></span>
-statistic of Hotelling’s test.</figcaption>
+<h4 align="center">Figure 6: The <span class="math inline"><em>T</em><sup>2</sup></span>
+statistic of Hotelling’s test.</h4>
 </figure>
 
 # Conclusions 
