@@ -2,9 +2,9 @@
 title: 'An open-sourced comprehensive Monte-Carlo-aided educational toolkit for statistics'
 
 tags:
-  - Python
   - Monte Carlo
   - Higher Education
+  - Python
   - Sampling Distribution
   - Test Statistic     
      
@@ -178,11 +178,11 @@ real-life financial and social data [@bib15]. In essence, the natural or social 
 Benford PMF is as follows (Table 2).
 
 <h4 align="center">Table 2: Leading digit PMF.</h4>
-
+<div align=center>
 | leading digit | 1    | 2    | 3    | 4   | 5   | 6   | 7   | 8   | 9   |
-|---------------|------|------|------|-----|-----|-----|-----|-----|-----|
+|:-------------:|------|------|------|-----|-----|-----|-----|-----|-----|
 |      p        | 30.1%| 17.6%| 12.5%| 9.7%| 7.9%| 6.7%| 5.8%| 5.1%| 4.6%|
-
+</div>
 
 The Benford class provides three examples to verify the Benford law (Figure 2). The first example uses the 20-year trading 
 volume data of AAPL (Apple Inc.). The second example uses the United Nations' international trading data. The last example 
@@ -327,7 +327,6 @@ of the People's Republic of China (2023YFD1000400).
 
 The source code is hosted on GitHub: https://github.com/zhangys11/mc.  
 License: Apache License 2.0 
-The CodeOcean reproducible Capsule is published at:\
-https : //doi.org/10.24433/CO.4921884.v2.
+The CodeOcean reproducible Capsule is published at: https : //doi.org/10.24433/CO.4921884.v2.
 
 # References
