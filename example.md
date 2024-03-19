@@ -57,7 +57,7 @@ of using LLN can be traced back to the 18th century when French
 scientist Buffon proposed his famous needle problem. Since the 20th
 century, digital computers have made the MC method much more helpful and
 popular. MC has been used in many theoretical research and engineering
-domains, e.g., optics [@bib1] [@bib2], radiation research [@bib3],
+domains, e.g., optics [@author:2001] [@bib2], radiation research [@bib3],
 nuclear physics [@bib4], medicine [@bib5], materials science [@bib6]
 [@bib7], quality management [@bib8], supply chain [@bib9], software
 engineering [@bib10], etc.
@@ -187,7 +187,7 @@ Prisoners.asymptotic_analysis(ns=[250,500,750,1000,1250,1500,1750,2000],
         # N : the number of MC experiments performed for each n.
 ```
 
-<figure id="fig:locker2">
+<figure id="fig:locker2" style="text-align: center;">
 <p><img src="fig1-locker2.png" style="width:45.0%"
 alt="image" /></p>
 <h4 align="center">Figure 1: Survival chance against prisoner number ($n$). When $n$ is large
@@ -211,11 +211,11 @@ Financial audits often use it to check faked or manipulated data. The
 Benford PMF is as follows (Table 2).
 
 <h4 align="center">Table 2: Leading digit PMF.</h4>
-<div align="center">
+
 | leading digit | 1    | 2    | 3    | 4   | 5   | 6   | 7   | 8   | 9   |
 |---------------|------|------|------|-----|-----|-----|-----|-----|-----|
 |      p        | 30.1%| 17.6%| 12.5%| 9.7%| 7.9%| 6.7%| 5.8%| 5.1%| 4.6%|
-</div>
+
 
 The Benford class provides three examples to verify the Benford law
 (Figure [2](#fig:benford mc){reference-type="ref"
@@ -245,7 +245,7 @@ than 200 to 300 because the population has grown bigger in the latter
 case. Therefore, it stays longer at smaller leading digits than the
 bigger ones.
 
-<figure id="fig:benford mc">
+<figure id="fig:benford mc" style="text-align: center;">
 <p><img src="fig6-benford mc1.png" style="width:47.0%" alt="image" />
 <img src="fig6-benford mc2.png" style="width:47.0%" alt="image" /> <img
 src="fig6-benford mc3.png" style="width:47.0%" alt="image" /> <img
@@ -291,14 +291,14 @@ Chisq_Gof_Stat(underlying_dist='binom',k=8,sample_size=100,N=10000).run()
     # N : how many MC experiments to run.
 ```
 
-<figure id="fig:galton gof">
+<figure id="fig:galton gof" style="text-align: center;">
 <p><img src="fig8-galton gof1.png" style="width:45.0%" alt="image" />
 <img src="fig8-galton gof2.png" style="width:45.0%" alt="image" /></p>
 <h4 align="center">Figure 3:Use the Galton Board game to verify the statistic in
 Pearson’s chi-square GOF test.</h4>
 </figure>
 
-<figure id="fig:dice gof">
+<figure id="fig:dice gof" style="text-align: center;">
 <p><img src="fig9-dice gof1.png" style="width:45.0%" alt="image" /> <img
 src="fig9-dice gof2.png" style="width:45.0%" alt="image" /></p>
 <h4 align="center">Figure 4: Use the dice game to verify the statistic in Pearson’s
@@ -324,7 +324,7 @@ Anova(k=10,n=10,N=10000).run()
     # N : how many MC experiments to run.
 ```
 
-<figure id="fig:anova mc">
+<figure id="fig:anova mc" style="text-align: center;">
 <p><img src="fig10-anova mc1.png" style="width:46.0%" alt="image" />
 <img src="fig10-anova mc2.png" style="width:46.0%" alt="image" /></p>
 <h4 align="center">Figure 5: Use MC to verify the ANOVA test statistic follows the F
@@ -355,7 +355,7 @@ Hotelling_T2_Test(n=50,k=2,N=1000).run()
     # N : how many MC experiments to run.
 ```
 
-<figure id="fig:Hotelling T mc">
+<figure id="fig:Hotelling T mc" style="text-align: center;">
 <p><img src="fig16-Hotelling T mc1.png" style="width:45.0%"
 alt="image" /> <img src="fig16-Hotelling T mc2.png" style="width:45.0%"
 alt="image" /></p>
@@ -389,3 +389,5 @@ The source code is hosted on GitHub: https://github.com/zhangys11/mc.
 License: Apache License 2.0 
 The CodeOcean reproducible Capsule is published at:\
 https : //doi.org/10.24433/CO.4921884.v2.
+
+# References
