@@ -10,13 +10,10 @@ tags:
      
 authors:
   - name: Mengrui Zhang   
-    equal-contrib: true  
     affiliation: 2
   - name: Sifan Zhang  
-    equal-contrib: true  
     affiliation: 3
   - name: Xudong Yang  
-    equal-contrib: true  
     affiliation: 2
   - name: Yinsheng Zhang  
     corresponding: true  
@@ -81,7 +78,7 @@ The following manuscript will provide details on the software functionality.
 
 # Overview
 
-Table 1 provides an overview of the toolkit's API (application programming interface). The toolkit is organized into three 
+ \autoref{Table 1} provides an overview of the toolkit's API (application programming interface). The toolkit is organized into three 
 modules. The first module offers simulations for solving classical numeric or probability problems, e.g., Buffon's needle 
 problem, the locker puzzle, etc. The second module provides simulated experiments to generate simulations for commonly 
 used distributions, e.g., a sudden death game that produces the exponential distribution and the paper clip experiment 
@@ -89,14 +86,14 @@ that generates the Zipf distribution. For each MC experiment, both the observed 
 are provided for comparison. The third module illustrates the sampling distribution of popular hypothesis test statistics. 
 e.g., the $\chi^{2}$ statistic in Pearson's chi-squared GOF test, ANOVA's F statistic, etc.
 
-<h4 align="center">Table 1: An overview of the software modules and classes.</h4>
+[Table 1: An overview of the software modules and classes.]{label="Table 1"}
 
 | Module | Class | Description |
 |----------|-------|-------------|
-|                | Pi | Perform Buffon's needle experiment to estimate $\pi$. |
+| mc.experiments | Pi | Perform Buffon's needle experiment to estimate $\pi$. |
 |                | Parcel | Simulate a bi-directional parcel passing game. |
 |                | Dices | Estimate the probabilities of various dice combinations. |
-| mc.experiments | Prisoners | The famous locker puzzle(100-prisoner quiz). <br>The asymptotic_analysis() function will demonstrate that the survival chance limit is $1-\ln(2)$ when *n* approaches $+\infty$. |
+|                | Prisoners | The famous locker puzzle(100-prisoner quiz). <br>The asymptotic_analysis() function will demonstrate that the survival chance limit is $1-\ln(2)$ when *n* approaches $+\infty$. |
 |                | Galton_Board | Use the classic Galton board experiment to produce a binomial distribution. |
 |                | Paper_Clips | Use the paper clip experiment to create a Zipf distribution. |
 |                | Sudden_Death | This class simulates a sudden death game to make the exponential distribution. |
@@ -104,12 +101,12 @@ e.g., the $\chi^{2}$ statistic in Pearson's chi-squared GOF test, ANOVA's F stat
 | mc.distributions | Poisson | This class will demonstrate that Poisson is a limit distribution of *b(n,p)* when *n* is large and *p* is small. |
 |                  | Benford | Verify Benford's law using real-life datasets, including the stock market data, international trade data, and the Fibonacci series. |
 ||
-|                | Clt | Using various underlying distributions to verify the central limit theorem. This class provides the following underlying distributions: <br>“uniform” - a uniform distribution U(-1,1); <br>“expon” - an exponential distribution Expon(1); <br>“poisson” - Poisson distribution $\pi(1)$; <br>“coin” - Bernoulli distribution with $p = 0.5$; <br>“tampered_coin” - PMF:{0:0.2,1:0.8}, i.e., head more likely than tail; <br>“dice” - PMF:{1:1/6,2:1/6,3:1/6,4:1/6,5:1/6,6:1/6}; <br>“tampered_dice” - PMF: {1:0.1,2:0.1,3:0.1,4:0.1,5:0.1,6:0.5}, i.e., 6 is more likely. |
+| mc.experiments | Clt | Using various underlying distributions to verify the central limit theorem. This class provides the following underlying distributions: <br>“uniform” - a uniform distribution U(-1,1); <br>“expon” - an exponential distribution Expon(1); <br>“poisson” - Poisson distribution $\pi(1)$; <br>“coin” - Bernoulli distribution with $p = 0.5$; <br>“tampered_coin” - PMF:{0:0.2,1:0.8}, i.e., head more likely than tail; <br>“dice” - PMF:{1:1/6,2:1/6,3:1/6,4:1/6,5:1/6,6:1/6}; <br>“tampered_dice” - PMF: {1:0.1,2:0.1,3:0.1,4:0.1,5:0.1,6:0.5}, i.e., 6 is more likely. |
 |                | T_Test | This class constructs an r.v. (random variable) following the t distribution. |
 |                | Chisq_Gof_Test | Verify the statistic used in Pearson's Chi-Square Goodness-of-Fit test follows the $\chi^2$ distribution. |
 |                | Fk_Test | Verify the Fligner-Killeen Test statistic(FK) follows the $\chi^2$ distribution. |
 |                | Bartlett_Test | Verify that Bartlett's test statistic follows the $\chi^2$ distribution. |
-| mc.experiments | Anova | Verify the statistic of ANOVA follows the F distribution. |
+|                | Anova | Verify the statistic of ANOVA follows the F distribution. |
 |                | Kw_Test | Verify the Kruskal-Wallis test statistic (H) is a $\chi^2$ r.v. |
 |                | Sign_Test | For the sign test (medium test), verify its N- and N+ statistics follow b(n,1/2). |
 |                | Cochrane_Q_Test | Verify the statistic T in the Cochrane-Q test follows the $\chi^2$ distribution. |
@@ -142,7 +139,7 @@ $p=1-\frac{1}{100!}\sum_{l=51}^{100}\left(\frac{1}{l}\times100!\right)=1-\sum_{l
 Furthermore, if we increase the total prisoner number, we can prove that this probability will converge to $1-ln2$ (0.307).
 
 The Prisoners class simulates this experiment, and users can get the survival chance plot against different prisoner 
-numbers(Figure 1).
+numbers(\autoref{fig:1}).
 
 ``` {.python language="python"}
 Prisoners(n=100,N=2000).run()
@@ -159,13 +156,8 @@ Prisoners.asymptotic_analysis(ns=[250,500,750,1000,1250,1500,1750,2000],
     # SD : how many SD (standard deviation) to show in the error bar chart.
     # N : the number of MC experiments performed for each n.
 ```
-
-<figure id="fig:locker2" style="text-align: center;">
-<div align=center><img src="fig1-locker2.png" style="width:45.0%"
-alt="image" /></div>
-<h4 align="center">Figure 1: Survival chance against prisoner number ($n$). When $n$ is large
-enough, this chance will approach $1-ln2$.</h4>
-</figure>
+![Figure 1: Survival chance against prisoner number ($n$). When $n$ is large enough, this chance will approach 
+$1-ln2$.\label{fig:1}](fig1-locker2.png){width=25%}
 
 ## Classes for Common Distributions
 
@@ -178,16 +170,16 @@ Here, we will demonstrate the Benford distribution.
 The Benford law, a.k.a. the Newcomb-Benford law or the first-digit law, describes the PMF of leading digits in many 
 real-life financial and social data [@bib13]. In essence, the natural or social processes that follow the power laws 
 (very common) often demonstrate this distribution. Financial audits often use it to check faked or manipulated data. The
-Benford PMF is as follows (Table 2).
+Benford PMF is as follows (\autoref{Table 2}).
 
-<h4 align="center">Table 2: Leading digit PMF.</h4>
+[Table 2: Leading digit PMF.]{label="Table 2"}
 
 |   leading digit   |    1     |    2     |    3     |    4    |    5    |     6   |    7    |    8    |    9    |
 |:-----------------:|----------|----------|----------|---------|---------|---------|---------|---------|---------|
 |        p          |   30.1%  |   17.6%  |   12.5%  |   9.7%  |   7.9%  |   6.7%  |   5.8%  |   5.1%  |   4.6%  |
 
 
-The Benford class provides three examples to verify the Benford law (Figure 2). The first example uses the 20-year trading 
+The Benford class provides three examples to verify the Benford law (\autoref{fig:2}). The first example uses the 20-year trading 
 volume data of AAPL (Apple Inc.). The second example uses the United Nations' international trading data. The last example 
 uses the Fibonacci series.
 
@@ -201,21 +193,17 @@ Benford(data='stock',N=1000).run()
     # N : how many MC experiments to run.
 ```
 
-According to Figure 2, all the examples fit well against the theoretical Benford distribution. We can use the Fibonacci 
+According to \autoref{fig:2}, all the examples fit well against the theoretical Benford distribution. We can use the Fibonacci 
 series to explain the Benford law intuitively. The Fibonacci sequence represents how a population (e.g., rabbits) grows 
 in a resource-unlimited environment. At a steady breeding speed, it takes much longer time to increase the population 
 from 100 to 200 (need to increase by 100) than from 90 to 100 (only need to increase by 10). It also takes longer time 
 than 200 to 300 because the population has grown bigger in the latter case. Therefore, it stays longer at smaller leading 
 digits than the bigger ones.
 
-<figure id="fig:benford mc" style="text-align: center;">
-<div align=center><img src="fig6-benford mc1.png" style="width:45.0%" alt="image" />
-<img src="fig6-benford mc2.png" style="width:45.0%" alt="image" /> <img
-src="fig6-benford mc3.png" style="width:45.0%" alt="image" /> <img
-src="fig6-benford mc4.png" style="width:45.0%" alt="image" /></div>
-<h4 align="center">Figure 2: Verify the Benford law using two real-life datasets and the
-Fibonacci series.</h4>
-</figure>
+![](fig6-benford mc1.png){width=25%}
+![](fig6-benford mc2.png){width=25%}
+![](fig6-benford mc3.png){width=25%}
+![Figure 2: Verify the Benford law using two real-life datasets and the Fibonacci series.\label{fig:2}](fig6-benford mc4.png){width=25%}
 
 
 ## Classes for Sampling Distributions
@@ -233,8 +221,8 @@ Pearson's Chi-Square Goodness-of-Fit (GOF) test uses the following statistic.
     $$\chi^2=\sum_{j=1}^{k}\frac{(f_{j}-np_{j})^2}{np_{j}} \sim \chi^2(k-1)$$  
 When $n$ is large enough ($n \geq 50$), $\chi^2$ will follow the $\chi^2(k-1)$ distribution. As Pearson's chi-square 
 GOF test is non-parametric, there is no restriction on the population distribution. The Chisq_Gof_Test class provides 
-two population distributions. (1) The first is the Galton board (use the binominal population, Figure 3). (2) The second 
-is the dice game (use the uniform PMF, Figure 4). In both cases, the statistic histogram from the MC experiment is very close
+two population distributions. (1) The first is the Galton board (use the binominal population, \autoref{fig:3}). (2) The second 
+is the dice game (use the uniform PMF, \autoref{fig:4}). In both cases, the statistic histogram from the MC experiment is very close
 to the theoretical $\chi^2(k-1)$ distribution.
 
 ``` {.python language="python"}
@@ -246,20 +234,11 @@ Chisq_Gof_Stat(underlying_dist='binom',k=8,sample_size=100,N=10000).run()
     # k : classes in the PMF.
     # N : how many MC experiments to run.
 ```
+![](fig8-galton gof1.png){width=25%}
+![Figure 3:Use the Galton Board game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:3}](fig8-galton gof2.png){width=25%}
 
-<figure id="fig:galton gof" style="text-align: center;">
-<div align=center><img src="fig8-galton gof1.png" style="width:45.0%" alt="image" />
-<img src="fig8-galton gof2.png" style="width:45.0%" alt="image" /></div>
-<h4 align="center">Figure 3:Use the Galton Board game to verify the statistic in
-Pearson’s chi-square GOF test.</h4>
-</figure>
-
-<figure id="fig:dice gof" style="text-align: center;">
-<div align=center><img src="fig9-dice gof1.png" style="width:45.0%" alt="image" /> <img
-src="fig9-dice gof2.png" style="width:45.0%" alt="image" /></div>
-<h4 align="center">Figure 4: Use the dice game to verify the statistic in Pearson’s
-chi-square GOF test.</h4>
-</figure>
+![](fig9-dice gof1.png){width=25%}
+![Figure 4: Use the dice game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:4}](fig9-dice gof2.png){width=25%}
 
 ### ANOVA
 
@@ -268,7 +247,7 @@ $H_{0}$ is: $\mu_{1}=\mu_{2}=...=\mu_{k}$. ANOVA constructs the test statistic b
 treatment (between-class difference, MSTR) and noise (within-class variance, MSE). When $H_{0}$ is true, the ratio of 
 MSTR and MSE will follow the F distribution, i.e., $F=\frac{MSTR}{MSE} \sim F(k-1,n-1)$.
 
-The Anova class will calculate the histogram of the F statistic observed from a multi-group normal sample (Figure 5).
+The Anova class will calculate the histogram of the F statistic observed from a multi-group normal sample (\autoref{fig:5}).
 
 ``` {.python language="python"}
 Anova(k=10,n=10,N=10000).run()
@@ -277,12 +256,8 @@ Anova(k=10,n=10,N=10000).run()
     # N : how many MC experiments to run.
 ```
 
-<figure id="fig:anova mc" style="text-align: center;">
-<div align=center><img src="fig10-anova mc1.png" style="width:45.0%" alt="image" />
-<img src="fig10-anova mc2.png" style="width:45.0%" alt="image" /></div>
-<h4 align="center">Figure 5: Use MC to verify the ANOVA test statistic follows the F
-distribution.</h4>
-</figure>
+![](fig10-anova mc1.png){width=25%}
+![Figure 5: Use MC to verify the ANOVA test statistic follows the F distribution.\label{fig:5}](fig10-anova mc2.png){width=25%}
 
 ### Hotelling's $T^2$ Test
 
@@ -293,7 +268,7 @@ $$T^2=n(\overline{x}-\mu)^{T}S^{-1}(\overline{x}-\mu)$$
 $S=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})(x_{i}-\overline{x})^T$ is the grand covariance matrix.
 
 If the dimensionality $k = 1$, Hotelling's $T^2$ degenerates into the t distribution. When $k \geq 2$, it is a multivariate 
-generalization of the t distribution. The Hotelling_T2_Test class verifies the $T^2$ sampling distribution (Figure 6).
+generalization of the t distribution. The Hotelling_T2_Test class verifies the $T^2$ sampling distribution (\autoref{fig:6}).
 
 ``` {.python language="python"}
 Hotelling_T2_Test(n=50,k=2,N=1000).run()
@@ -301,14 +276,8 @@ Hotelling_T2_Test(n=50,k=2,N=1000).run()
     # k : data dimension.
     # N : how many MC experiments to run.
 ```
-
-<figure id="fig:Hotelling T mc" style="text-align: center;">
-<div align=center><img src="fig16-Hotelling T mc1.png" style="width:45.0%"
-alt="image" /> <img src="fig16-Hotelling T mc2.png" style="width:45.0%"
-alt="image" /></div>
-<h4 align="center">Figure 6: The <span class="math inline"><em>T</em><sup>2</sup></span>
-statistic of Hotelling’s test.</h4>
-</figure>
+![](fig16-Hotelling T mc1.png){width=25%}
+![Figure 6: The $T^2$ statistic of Hotelling’s test.\label{fig:6}](fig16-Hotelling T mc2.png){width=25%}
 
 # Acknowledgment
 
