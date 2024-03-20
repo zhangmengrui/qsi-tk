@@ -86,7 +86,7 @@ that generates the Zipf distribution. For each MC experiment, both the observed 
 are provided for comparison. The third module illustrates the sampling distribution of popular hypothesis test statistics. 
 e.g., the $\chi^{2}$ statistic in Pearson's chi-squared GOF test, ANOVA's F statistic, etc.
 
-[Table 1: An overview of the software modules and classes.]{label="Table 1"}
+![Table 1: An overview of the software modules and classes.]{label="Table 1"}
 
 | Module | Class | Description |
 |----------|-------|-------------|
@@ -157,7 +157,7 @@ Prisoners.asymptotic_analysis(ns=[250,500,750,1000,1250,1500,1750,2000],
     # N : the number of MC experiments performed for each n.
 ```
 ![Figure 1: Survival chance against prisoner number ($n$). When $n$ is large enough, this chance will approach 
-$1-ln2$.\label{fig:1}](fig1-locker2.png){width=25%}
+$1-ln2$.\label{fig:1}](fig1-locker2.png)
 
 ## Classes for Common Distributions
 
@@ -172,7 +172,7 @@ real-life financial and social data [@bib13]. In essence, the natural or social 
 (very common) often demonstrate this distribution. Financial audits often use it to check faked or manipulated data. The
 Benford PMF is as follows (\autoref{Table 2}).
 
-[Table 2: Leading digit PMF.]{label="Table 2"}
+![Table 2: Leading digit PMF.]{label="Table 2"}
 
 |   leading digit   |    1     |    2     |    3     |    4    |    5    |     6   |    7    |    8    |    9    |
 |:-----------------:|----------|----------|----------|---------|---------|---------|---------|---------|---------|
@@ -200,11 +200,10 @@ from 100 to 200 (need to increase by 100) than from 90 to 100 (only need to incr
 than 200 to 300 because the population has grown bigger in the latter case. Therefore, it stays longer at smaller leading 
 digits than the bigger ones.
 
-![](fig6-benford mc1.png){width=25%}
-![](fig6-benford mc2.png){width=25%}
-![](fig6-benford mc3.png){width=25%}
-![Figure 2: Verify the Benford law using two real-life datasets and the Fibonacci series.\label{fig:2}](fig6-benford mc4.png){width=25%}
-
+![Figure 2: Verify the Benford law using two real-life datasets and the Fibonacci series.\label{fig:2}](fig6-benford mc1.png)
+![Figure 2 continued.](fig6-benford mc2.png)
+![Figure 2 continued.](fig6-benford mc3.png)
+![Figure 2 continued.](fig6-benford mc4.png)
 
 ## Classes for Sampling Distributions
 
@@ -234,11 +233,12 @@ Chisq_Gof_Stat(underlying_dist='binom',k=8,sample_size=100,N=10000).run()
     # k : classes in the PMF.
     # N : how many MC experiments to run.
 ```
-![](fig8-galton gof1.png){width=25%}
-![Figure 3:Use the Galton Board game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:3}](fig8-galton gof2.png){width=25%}
 
-![](fig9-dice gof1.png){width=25%}
-![Figure 4: Use the dice game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:4}](fig9-dice gof2.png){width=25%}
+![Figure 3:Use the Galton Board game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:3}](fig8-galton gof1.png)
+![Figure 3 continued.](fig8-galton gof2.png)
+
+![Figure 4: Use the dice game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:4}](fig9-dice gof1.png)
+![Figure 4 continued.](fig9-dice gof2.png)
 
 ### ANOVA
 
@@ -256,8 +256,8 @@ Anova(k=10,n=10,N=10000).run()
     # N : how many MC experiments to run.
 ```
 
-![](fig10-anova mc1.png){width=25%}
-![Figure 5: Use MC to verify the ANOVA test statistic follows the F distribution.\label{fig:5}](fig10-anova mc2.png){width=25%}
+![Figure 5: Use MC to verify the ANOVA test statistic follows the F distribution.\label{fig:5}](fig10-anova mc1.png)
+![Figure 5 continued.](fig10-anova mc2.png)
 
 ### Hotelling's $T^2$ Test
 
@@ -276,8 +276,9 @@ Hotelling_T2_Test(n=50,k=2,N=1000).run()
     # k : data dimension.
     # N : how many MC experiments to run.
 ```
-![](fig16-Hotelling T mc1.png){width=25%}
-![Figure 6: The $T^2$ statistic of Hotelling’s test.\label{fig:6}](fig16-Hotelling T mc2.png){width=25%}
+
+![Figure 6: The $T^2$ statistic of Hotelling’s test.\label{fig:6}](fig16-Hotelling T mc1.png)
+![](fig16-Hotelling T mc2.png)
 
 # Acknowledgment
 
