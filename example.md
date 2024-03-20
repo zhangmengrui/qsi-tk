@@ -196,13 +196,13 @@ from 100 to 200 (need to increase by 100) than from 90 to 100 (only need to incr
 than 200 to 300 because the population has grown bigger in the latter case. Therefore, it stays longer at smaller leading 
 digits than the bigger ones.
 
-![Figure 2: Verify the Benford law using two real-life datasets and the Fibonacci series.\label{fig:2}](fig6-benford mc1.png)
+![](fig6-benford mc1.png)
 
-![Figure 2: Verify the Benford law using two real-life datasets and the Fibonacci series.\label{fig:2}](fig6-benford mc2.png)
+![](fig6-benford mc2.png)
 
-![Figure 2: Verify the Benford law using two real-life datasets and the Fibonacci series.\label{fig:2}](fig6-benford mc3.png)
+![](fig6-benford mc3.png)
 
-![Figure 2: Verify the Benford law using two real-life datasets and the Fibonacci series.\label{fig:2}](fig6-benford mc4.png)
+![](fig6-benford mc4.png)
 
 ## Classes for Sampling Distributions
 
@@ -233,10 +233,12 @@ Chisq_Gof_Stat(underlying_dist='binom',k=8,sample_size=100,N=10000).run()
     # N : how many MC experiments to run.
 ```
 
-![Figure 3:Use the Galton Board game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:3}](fig8-galton gof1.png)
+![](fig8-galton gof1.png)
+
 ![Figure 3:Use the Galton Board game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:3}](fig8-galton gof2.png)
 
-![Figure 4: Use the dice game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:4}](fig9-dice gof1.png)
+![](fig9-dice gof1.png)
+
 ![Figure 4: Use the dice game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:4}](fig9-dice gof2.png)
 
 ### ANOVA
@@ -255,7 +257,8 @@ Anova(k=10,n=10,N=10000).run()
     # N : how many MC experiments to run.
 ```
 
-![Figure 5: Use MC to verify the ANOVA test statistic follows the F distribution.\label{fig:5}](fig10-anova mc1.png)
+![](fig10-anova mc1.png)
+
 ![Figure 5: Use MC to verify the ANOVA test statistic follows the F distribution.\label{fig:5}](fig10-anova mc2.png)
 
 ### Hotelling's $T^2$ Test
@@ -276,7 +279,8 @@ Hotelling_T2_Test(n=50,k=2,N=1000).run()
     # N : how many MC experiments to run.
 ```
 
-![Figure 6: The $T^2$ statistic of Hotelling’s test.\label{fig:6}](fig16-Hotelling T mc1.png)
+![](fig16-Hotelling T mc1.png)
+
 ![Figure 6: The $T^2$ statistic of Hotelling’s test.\label{fig:6}](fig16-Hotelling T mc2.png)
 
 # Acknowledgment
