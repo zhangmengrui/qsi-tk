@@ -78,7 +78,7 @@ The following manuscript will provide details on the software functionality.
 
 # Overview
 
-@tbl:1 provides an overview of the toolkit's API (application programming interface). The toolkit is organized into three 
+\ref{Table:1} provides an overview of the toolkit's API (application programming interface). The toolkit is organized into three 
 modules. The first module offers simulations for solving classical numeric or probability problems, e.g., Buffon's needle 
 problem, the locker puzzle, etc. The second module provides simulated experiments to generate simulations for commonly 
 used distributions, e.g., a sudden death game that produces the exponential distribution and the paper clip experiment 
@@ -86,7 +86,7 @@ that generates the Zipf distribution. For each MC experiment, both the observed 
 are provided for comparison. The third module illustrates the sampling distribution of popular hypothesis test statistics. 
 e.g., the $\chi^{2}$ statistic in Pearson's chi-squared GOF test, ANOVA's F statistic, etc.
 
-Table 1: An overview of the software modules and classes.{#tbl:1}
+Table 1: An overview of the software modules and classes.\label{Table:1}
 
 | Module | Class | Description |
 |----------|-------|-------------|
@@ -170,9 +170,9 @@ Here, we will demonstrate the Benford distribution.
 The Benford law, a.k.a. the Newcomb-Benford law or the first-digit law, describes the PMF of leading digits in many 
 real-life financial and social data [@bib13]. In essence, the natural or social processes that follow the power laws 
 (very common) often demonstrate this distribution. Financial audits often use it to check faked or manipulated data. The
-Benford PMF is as follows (@tbl:2).
+Benford PMF is as follows (\ref{Table:2}).
 
-Table 2: Leading digit PMF.{#tbl:2}
+Table 2: Leading digit PMF.\label{Table:2}
 
 |   leading digit   |    1     |    2     |    3     |    4    |    5    |     6   |    7    |    8    |    9    |
 |:-----------------:|----------|----------|----------|---------|---------|---------|---------|---------|---------|
@@ -201,9 +201,9 @@ than 200 to 300 because the population has grown bigger in the latter case. Ther
 digits than the bigger ones.
 
 ![Figure 2: Verify the Benford law using two real-life datasets and the Fibonacci series.\label{fig:2}](fig6-benford mc1.png)
-![](fig6-benford mc2.png)
-![](fig6-benford mc3.png)
-![](fig6-benford mc4.png)
+![Figure 2: Verify the Benford law using two real-life datasets and the Fibonacci series.\label{fig:2}](fig6-benford mc2.png)
+![Figure 2: Verify the Benford law using two real-life datasets and the Fibonacci series.\label{fig:2}](fig6-benford mc3.png)
+![Figure 2: Verify the Benford law using two real-life datasets and the Fibonacci series.\label{fig:2}](fig6-benford mc4.png)
 
 ## Classes for Sampling Distributions
 
@@ -235,10 +235,10 @@ Chisq_Gof_Stat(underlying_dist='binom',k=8,sample_size=100,N=10000).run()
 ```
 
 ![Figure 3:Use the Galton Board game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:3}](fig8-galton gof1.png)
-![Figure 3 continued.](fig8-galton gof2.png)
+![Figure 3:Use the Galton Board game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:3}](fig8-galton gof2.png)
 
 ![Figure 4: Use the dice game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:4}](fig9-dice gof1.png)
-![Figure 4 continued.](fig9-dice gof2.png)
+![Figure 4: Use the dice game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:4}](fig9-dice gof2.png)
 
 ### ANOVA
 
@@ -257,7 +257,7 @@ Anova(k=10,n=10,N=10000).run()
 ```
 
 ![Figure 5: Use MC to verify the ANOVA test statistic follows the F distribution.\label{fig:5}](fig10-anova mc1.png)
-![Figure 5 continued.](fig10-anova mc2.png)
+![Figure 5: Use MC to verify the ANOVA test statistic follows the F distribution.\label{fig:5}](fig10-anova mc2.png)
 
 ### Hotelling's $T^2$ Test
 
@@ -278,7 +278,7 @@ Hotelling_T2_Test(n=50,k=2,N=1000).run()
 ```
 
 ![Figure 6: The $T^2$ statistic of Hotelling’s test.\label{fig:6}](fig16-Hotelling T mc1.png)
-![](fig16-Hotelling T mc2.png)
+![Figure 6: The $T^2$ statistic of Hotelling’s test.\label{fig:6}](fig16-Hotelling T mc2.png)
 
 # Acknowledgment
 
