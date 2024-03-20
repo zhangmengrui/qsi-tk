@@ -100,10 +100,10 @@ e.g., the $\chi^{2}$ statistic in Pearson's chi-squared GOF test, ANOVA's F stat
 |                | Galton_Board | Use the classic Galton board experiment to produce a binomial distribution. |
 |                | Paper_Clips | Use the paper clip experiment to create a Zipf distribution. |
 |                | Sudden_Death | This class simulates a sudden death game to make the exponential distribution. |
-|----------|-------|-------------|
+||
 | mc.distributions | Poisson | This class will demonstrate that Poisson is a limit distribution of *b(n,p)* when *n* is large and *p* is small. |
 |                  | Benford | Verify Benford's law using real-life datasets, including the stock market data, international trade data, and the Fibonacci series. |
-|----------|-------|-------------|
+||
 |                | Clt | Using various underlying distributions to verify the central limit theorem. This class provides the following underlying distributions: <br>“uniform” - a uniform distribution U(-1,1); <br>“expon” - an exponential distribution Expon(1); <br>“poisson” - Poisson distribution $\pi(1)$; <br>“coin” - Bernoulli distribution with $p = 0.5$; <br>“tampered_coin” - PMF:{0:0.2,1:0.8}, i.e., head more likely than tail; <br>“dice” - PMF:{1:1/6,2:1/6,3:1/6,4:1/6,5:1/6,6:1/6}; <br>“tampered_dice” - PMF: {1:0.1,2:0.1,3:0.1,4:0.1,5:0.1,6:0.5}, i.e., 6 is more likely. |
 |                | T_Test | This class constructs an r.v. (random variable) following the t distribution. |
 |                | Chisq_Gof_Test | Verify the statistic used in Pearson's Chi-Square Goodness-of-Fit test follows the $\chi^2$ distribution. |
@@ -289,7 +289,7 @@ distribution.</h4>
 The Hotelling's $T^2$ test compares the mean of two multivariate populations. Suppose we have two groups of samples from
 $N(\mu_{1},\sum)$ and $N(\mu_{2},\sum)$. They share the same covariance matrix $\sum$. The null hypothesis is 
 $H_{0}: \mu_{1}=\mu_{2}$ and the test statistic is: 
-$$T^2=n(\overline{x}-\mu)^{T}S^{-1}(\overline{x}-\mu)$$     
+$$T^2=n(\overline{x}-\mu)^{T}S^{-1}(\overline{x}-\mu)$$    
 $S=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})(x_{i}-\overline{x})^T$ is the grand covariance matrix.
 
 If the dimensionality $k = 1$, Hotelling's $T^2$ degenerates into the t distribution. When $k \geq 2$, it is a multivariate 
