@@ -86,7 +86,7 @@ that generates the Zipf distribution. For each MC experiment, both the observed 
 are provided for comparison. The third module illustrates the sampling distribution of popular hypothesis test statistics. 
 e.g., the $\chi^{2}$ statistic in Pearson's chi-squared GOF test, ANOVA's F statistic, etc.
 
-![Table 1: An overview of the software modules and classes.]{label="Table 1"}
+![Table 1: An overview of the software modules and classes.\label{Table 1}]
 
 | Module | Class | Description |
 |----------|-------|-------------|
