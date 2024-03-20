@@ -57,9 +57,9 @@ Based on LLN (Law of Large Numbers), MC can provide a convincing approximation f
 frequency will asymptotically approach its theoretical probability($f \rightarrow p$). The early idea of using LLN can be 
 traced back to the 18th century when French scientist Buffon proposed his famous needle problem. Since the 20th century, 
 digital computers have made the MC method much more helpful and popular. MC has been used in many theoretical research 
-and engineering domains, e.g., optics [@bib1] [@bib2], radiation research [@bib3], nuclear physics [@bib4], 
-medicine [@bib5], materials science [@bib6] [@bib7], quality management [@bib8], supply chain [@bib9], software
-engineering [@bib10], etc.
+and engineering domains, e.g., optics [@bib1], radiation research, nuclear physics, 
+medicine, materials science, quality management, supply chain, software
+engineering, etc.
 
 As higher education teachers, we found the MC method a powerful and promising didactic tool. This paper introduces an 
 MC-aided educational toolkit for probability and statistics-related courses and studies. The project was initiated in 
@@ -129,8 +129,8 @@ experiment. Here, we will demonstrate the locker puzzle.
 
 ### The Locker Puzzle
 
-The "hundred-prisoner puzzle" or "the locker puzzle" was first addressed by Danish scientist Peter Bro Miltersen [@bib12] 
-[@bib13]. In this puzzle, there are 100 lockers containing No.1 to No.100. In each round, one prisoner will open 50 lockers. 
+The "hundred-prisoner puzzle" or "the locker puzzle" was first addressed by Danish scientist Peter Bro Miltersen. 
+In this puzzle, there are 100 lockers containing No.1 to No.100. In each round, one prisoner will open 50 lockers. 
 The game will continue if his/her number is found inside any of the opened lockers. Otherwise, the game is over, and all 
 prisoners will be executed. The prisoners cannot communicate with each other during the game. What are the best strategy 
 and the highest survival probability?
@@ -138,8 +138,8 @@ and the highest survival probability?
 With no strategy (becomes a repeated Bernoulli experiment), the survival probability will be $(\frac{1}{2})^{100}$, which 
 is virtually 0. According to the authors, the best strategy is the "circular chain," i.e., the prisoner first opens the 
 locker of their number then opens the locker whose number is inside the last locker. With this strategy, the survival 
-probability equals the probability of creating circular chains no longer than 50. This probability is
-$$p=1-\frac{1}{100!}\sum_{l=51}^{100}\left(\frac{1}{l}\times100!\right)=1-\sum_{l=51}^{100}\frac{1}{l}=1-0.688=0.312$$.
+probability equals the probability of creating circular chains no longer than 50. This probability is: 
+$$p=1-\frac{1}{100!}\sum_{l=51}^{100}\left(\frac{1}{l}\times100!\right)=1-\sum_{l=51}^{100}\frac{1}{l}=1-0.688=0.312$$
 Furthermore, if we increase the total prisoner number, we can prove that this probability will converge to $1-ln2$ (0.307).
 
 The Prisoners class simulates this experiment, and users can get the survival chance plot against different prisoner 
@@ -176,7 +176,7 @@ Here, we will demonstrate the Benford distribution.
 ### Benford Distribution
 
 The Benford law, a.k.a. the Newcomb-Benford law or the first-digit law, describes the PMF of leading digits in many 
-real-life financial and social data [@bib15]. In essence, the natural or social processes that follow the power laws 
+real-life financial and social data. In essence, the natural or social processes that follow the power laws 
 (very common) often demonstrate this distribution. Financial audits often use it to check faked or manipulated data. The
 Benford PMF is as follows (Table 2).
 
@@ -287,8 +287,9 @@ distribution.</h4>
 The Hotelling's $T^2$ test compares the mean of two multivariate populations. Suppose we have two groups of samples from
 $N(\mu_{1},\sum)$ and $N(\mu_{2},\sum)$. They share the same covariance matrix $\sum$. The null hypothesis is 
 $H_{0}: \mu_{1}=\mu_{2}$ and the test statistic is: 
-$$T^2=n(\overline{x}-\mu)^{T}S^{-1}(\overline{x}-\mu)$$    
-$$S=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})(x_{i}-\overline{x})^T$$ is the grand covariance matrix.
+$$T^2=n(\overline{x}-\mu)^{T}S^{-1}(\overline{x}-\mu)$$
+S is the grand covariance matrix:    
+$$S=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})(x_{i}-\overline{x})^T$$ 
 
 If the dimensionality $k = 1$, Hotelling's $T^2$ degenerates into the t distribution. When $k \geq 2$, it is a multivariate 
 generalization of the t distribution. The Hotelling_T2_Test class verifies the $T^2$ sampling distribution (Figure 6).
