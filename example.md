@@ -78,7 +78,7 @@ The following manuscript will provide details on the software functionality.
 
 # Overview
 
- \autoref{Table 1} provides an overview of the toolkit's API (application programming interface). The toolkit is organized into three 
+\autoref{Table:1} provides an overview of the toolkit's API (application programming interface). The toolkit is organized into three 
 modules. The first module offers simulations for solving classical numeric or probability problems, e.g., Buffon's needle 
 problem, the locker puzzle, etc. The second module provides simulated experiments to generate simulations for commonly 
 used distributions, e.g., a sudden death game that produces the exponential distribution and the paper clip experiment 
@@ -86,7 +86,7 @@ that generates the Zipf distribution. For each MC experiment, both the observed 
 are provided for comparison. The third module illustrates the sampling distribution of popular hypothesis test statistics. 
 e.g., the $\chi^{2}$ statistic in Pearson's chi-squared GOF test, ANOVA's F statistic, etc.
 
-Table 1: An overview of the software modules and classes.\label{Table 1}
+Table 1: An overview of the software modules and classes.\label{Table:1}
 
 | Module | Class | Description |
 |----------|-------|-------------|
@@ -170,9 +170,9 @@ Here, we will demonstrate the Benford distribution.
 The Benford law, a.k.a. the Newcomb-Benford law or the first-digit law, describes the PMF of leading digits in many 
 real-life financial and social data [@bib13]. In essence, the natural or social processes that follow the power laws 
 (very common) often demonstrate this distribution. Financial audits often use it to check faked or manipulated data. The
-Benford PMF is as follows (\autoref{Table 2}).
+Benford PMF is as follows (\autoref{Table:2}).
 
-![Table 2: Leading digit PMF.]{label="Table 2"}
+Table 2: Leading digit PMF.\label{Table:2}
 
 |   leading digit   |    1     |    2     |    3     |    4    |    5    |     6   |    7    |    8    |    9    |
 |:-----------------:|----------|----------|----------|---------|---------|---------|---------|---------|---------|
@@ -201,9 +201,9 @@ than 200 to 300 because the population has grown bigger in the latter case. Ther
 digits than the bigger ones.
 
 ![Figure 2: Verify the Benford law using two real-life datasets and the Fibonacci series.\label{fig:2}](fig6-benford mc1.png)
-![Figure 2 continued.](fig6-benford mc2.png)
-![Figure 2 continued.](fig6-benford mc3.png)
-![Figure 2 continued.](fig6-benford mc4.png)
+![](fig6-benford mc2.png)
+![](fig6-benford mc3.png)
+![](fig6-benford mc4.png)
 
 ## Classes for Sampling Distributions
 
