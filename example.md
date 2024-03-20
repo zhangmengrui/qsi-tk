@@ -154,7 +154,7 @@ Prisoners.asymptotic_analysis(ns=[250,500,750,1000,1250,1500,1750,2000],
     # SD : how many SD (standard deviation) to show in the error bar chart.
     # N : the number of MC experiments performed for each n.
 ```
-![Figure 1: Survival chance against prisoner number ($n$). When $n$ is large enough, this chance will approach 
+![Survival chance against prisoner number ($n$). When $n$ is large enough, this chance will approach 
 $1-ln2$.\label{fig:1}](fig1-locker2.png)
 
 ## Classes for Common Distributions
@@ -202,7 +202,7 @@ digits than the bigger ones.
 
 ![](fig6-benford mc3.png)
 
-![Figure 2: Verify the Benford law using two real-life datasets and the Fibonacci series.\label{fig:2}](fig6-benford mc4.png)
+![Verify the Benford law using two real-life datasets and the Fibonacci series.\label{fig:2}](fig6-benford mc4.png)
 
 ## Classes for Sampling Distributions
 
@@ -235,11 +235,11 @@ Chisq_Gof_Stat(underlying_dist='binom',k=8,sample_size=100,N=10000).run()
 
 ![](fig8-galton gof1.png)
 
-![Figure 3:Use the Galton Board game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:3}](fig8-galton gof2.png)
+![Use the Galton Board game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:3}](fig8-galton gof2.png)
 
 ![](fig9-dice gof1.png)
 
-![Figure 4: Use the dice game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:4}](fig9-dice gof2.png)
+![Use the dice game to verify the statistic in Pearson’s chi-square GOF test.\label{fig:4}](fig9-dice gof2.png)
 
 ### ANOVA
 
@@ -259,7 +259,7 @@ Anova(k=10,n=10,N=10000).run()
 
 ![](fig10-anova mc1.png)
 
-![Figure 5: Use MC to verify the ANOVA test statistic follows the F distribution.\label{fig:5}](fig10-anova mc2.png)
+![Use MC to verify the ANOVA test statistic follows the F distribution.\label{fig:5}](fig10-anova mc2.png)
 
 ### Hotelling's $T^2$ Test
 
@@ -281,7 +281,7 @@ Hotelling_T2_Test(n=50,k=2,N=1000).run()
 
 ![](fig16-Hotelling T mc1.png)
 
-![Figure 6: The $T^2$ statistic of Hotelling’s test.\label{fig:6}](fig16-Hotelling T mc2.png)
+![The $T^2$ statistic of Hotelling’s test.\label{fig:6}](fig16-Hotelling T mc2.png)
 
 # Acknowledgment
 
