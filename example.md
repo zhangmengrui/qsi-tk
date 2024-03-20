@@ -23,7 +23,7 @@ authors:
     affiliation: "1,2"
    
 affiliations:
- - name: Zhejiang Food and Drug Quality \& Safety Engineering Research Institute, Zhejiang Gongshang University, Hangzhou, 310018, China  
+ - name: Zhejiang Food and Drug Quality & Safety Engineering Research Institute, Zhejiang Gongshang University, Hangzhou, 310018, China  
    index: 1
  - name: School of Management and E-Business, Zhejiang Gongshang University, Hangzhou, 310018, China  
    index: 2
@@ -37,16 +37,18 @@ bibliography: bibliography.bib
 
 # Summary
 
-This paper introduces a Monte Carlo-based educational toolkit for probability and statistics-related courses. 
-It contains three modules. (1) The “experiments” module provides simulations for classical numeric or probability problems,
-e.g., Buffon's needle puzzle and the locker problem. (2) The “distributions” module uses simulations to generate common
-distributions, e.g., Benford, Poisson, and Zipf. (3) The “samplings” module illustrates the sampling distributions of
-hypothesis test statistics, e.g., the chi-squared statistic in Pearson's GOF test and the F statistic in ANOVA.
-This toolkit provides an empirical and intuitive alternative to formal math proofs for complex probability problems.
-Until now, it has been used in higher education courses for three years and was positively reviewed by both peer educators
-and undergraduate students. In the next development milestone, we will (1) extend API to support more experiments and 
-sampling distributions, and (2) provide a dedicated cross-platform desktop or web GUI (based on tk-inter or Flask) to 
-make the toolkit more user-friendly.
+This paper introduces a Monte Carlo-based educational toolkit for probability and statistics-related courses.  
+We have published it as an open-sourced project to benefit a broad range of peer researchers and educators. The toolkit 
+provides an empirical way to solve complex probability problems. It can intuitively illustrate the specific distribution 
+that a particular experiment or test statistic follows. It contains three modules. (1) The “experiments” module provides 
+simulations for classical numeric or probability problems, e.g., Buffon's needle puzzle and the locker problem. 
+(2) The “distributions” module uses simulations to generate common distributions, e.g., Benford, Poisson, and Zipf. 
+(3) The “samplings” module illustrates the sampling distributions of hypothesis test statistics, e.g., the chi-squared 
+statistic in Pearson's GOF test and the F statistic in ANOVA. This toolkit provides an empirical and intuitive alternative 
+to formal math proofs for complex probability problems. Until now, it has been used in higher education courses for three 
+years and was positively reviewed by both peer educators and undergraduate students. In the next development milestone, 
+we will (1) extend API to support more experiments and sampling distributions, and (2) provide a dedicated cross-platform 
+desktop or web GUI (based on tk-inter or Flask) to make the toolkit more user-friendly.
 
 # Statement of need
 
@@ -95,7 +97,7 @@ e.g., the $\chi^{2}$ statistic in Pearson's chi-squared GOF test, ANOVA's F stat
 |                | Pi | Perform Buffon's needle experiment to estimate $\pi$. |
 |                | Parcel | Simulate a bi-directional parcel passing game. |
 |                | Dices | Estimate the probabilities of various dice combinations. |
-| mc.experiments | Prisoners | The famous locker puzzle(100-prisoner quiz). The asymptotic_analysis() function will demonstrate that the survival chance limit is $1-\ln(2)$ when *n* approaches $+\infty$. |
+| mc.experiments | Prisoners | The famous locker puzzle(100-prisoner quiz). <br>The asymptotic_analysis() function will demonstrate that the survival chance limit is $1-\ln(2)$ when *n* approaches $+\infty$. |
 |                | Galton_Board | Use the classic Galton board experiment to produce a binomial distribution. |
 |                | Paper_Clips | Use the paper clip experiment to create a Zipf distribution. |
 |                | Sudden_Death | This class simulates a sudden death game to make the exponential distribution. |
@@ -137,7 +139,7 @@ With no strategy (becomes a repeated Bernoulli experiment), the survival probabi
 is virtually 0. According to the authors, the best strategy is the "circular chain," i.e., the prisoner first opens the 
 locker of their number then opens the locker whose number is inside the last locker. With this strategy, the survival 
 probability equals the probability of creating circular chains no longer than 50. This probability is
-$p=1-\frac{1}{100!}\sum_{l=51}^{100}\left(\frac{1}{l}\times100!\right)=1-\sum_{l=51}^{100}\frac{1}{l}=1-0.688=0.312$.
+$$p=1-\frac{1}{100!}\sum_{l=51}^{100}\left(\frac{1}{l}\times100!\right)=1-\sum_{l=51}^{100}\frac{1}{l}=1-0.688=0.312$$.
 Furthermore, if we increase the total prisoner number, we can prove that this probability will converge to $1-ln2$ (0.307).
 
 The Prisoners class simulates this experiment, and users can get the survival chance plot against different prisoner 
@@ -145,18 +147,17 @@ numbers(Figure 1).
 
 ``` {.python language="python"}
 Prisoners(n=100,N=2000).run()
-        # n : the number of prisoners.
-        # N : how many MC experiments to run.
-        ~\textbf{result} : p = 0.3116
+    # n : the number of prisoners.
+    # N : how many MC experiments to run.
+    result : p = 0.3116
 ```
 
 ``` {.python language="python"}
-Prisoners.asymptotic_analysis(ns=[250,500,750,1000,1250,1500,1750,2000],
-            repeat=10, SD=1,N = 1000)
-        # ns : prisoner numbers to be tested.
-        # repeat : repeat multiple times to calculate the SD (standard deviation).
-        # SD : how many SD (standard deviation) to show in the error bar chart.
-        # N : the number of MC experiments performed for each n.
+Prisoners.asymptotic_analysis(ns=[250,500,750,1000,1250,1500,1750,2000], repeat=10, SD=1,N = 1000)
+    # ns : prisoner numbers to be tested.
+    # repeat : repeat multiple times to calculate the SD (standard deviation).
+    # SD : how many SD (standard deviation) to show in the error bar chart.
+    # N : the number of MC experiments performed for each n.
 ```
 
 <figure id="fig:locker2" style="text-align: center;">
@@ -194,8 +195,7 @@ uses the Fibonacci series.
 Benford(data='stock',N=1000).run()
     # data : data set to be used.
     #  'stock' - use 20-year stock trading volume data of Apple Inc. (AAPL)
-    #  'trade' - use annual trade data from various countries. 
-    #            https://comtrade.un.org/data/mbs
+    #  'trade' - use annual trade data from various countries. https://comtrade.un.org/data/mbs
     #  'fibonacci' - use the top-N fibonacci series.    
     # N : how many MC experiments to run.
 ```
@@ -238,8 +238,7 @@ to the theoretical $\chi^2(k-1)$ distribution.
 
 ``` {.python language="python"}
 Chisq_Gof_Stat(underlying_dist='binom',k=8,sample_size=100,N=10000).run()
-    # underlying_dist : what kind of population dist to use. By default, 
-    #                   we use binom, i.e., the Galton board.
+    # underlying_dist : what kind of population dist to use. By default, we use binom, i.e., the Galton board.
     #   'binom'/'galton' - the population is binom.
     #   'dice' - 6 * 1/6.
     # k : classes in the PMF.
@@ -289,7 +288,7 @@ The Hotelling's $T^2$ test compares the mean of two multivariate populations. Su
 $N(\mu_{1},\sum)$ and $N(\mu_{2},\sum)$. They share the same covariance matrix $\sum$. The null hypothesis is 
 $H_{0}: \mu_{1}=\mu_{2}$ and the test statistic is: 
 $$T^2=n(\overline{x}-\mu)^{T}S^{-1}(\overline{x}-\mu)$$    
-$S=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})(x_{i}-\overline{x})^T$ is the grand covariance matrix.
+$$S=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})(x_{i}-\overline{x})^T$$ is the grand covariance matrix.
 
 If the dimensionality $k = 1$, Hotelling's $T^2$ degenerates into the t distribution. When $k \geq 2$, it is a multivariate 
 generalization of the t distribution. The Hotelling_T2_Test class verifies the $T^2$ sampling distribution (Figure 6).
@@ -318,6 +317,6 @@ of the People's Republic of China (2023YFD1000400).
 
 The source code is hosted on GitHub: https://github.com/zhangys11/mc.  
 License: Apache License 2.0 
-The CodeOcean reproducible Capsule is published at: https : //doi.org/10.24433/CO.4921884.v2.
+The CodeOcean reproducible Capsule is published at: https://doi.org/10.24433/CO.4921884.v2.
 
 # References
