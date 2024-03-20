@@ -202,7 +202,7 @@ digits than the bigger ones.
 
 ![](fig6-benford mc3.png)
 
-![](fig6-benford mc4.png)
+![Figure 2: Verify the Benford law using two real-life datasets and the Fibonacci series.\label{fig:2}](fig6-benford mc4.png)
 
 ## Classes for Sampling Distributions
 
