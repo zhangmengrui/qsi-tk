@@ -37,7 +37,7 @@ bibliography: bibliography.bib
 
 # Summary
 
-This paper introduces a Monte Carlo-based educational toolkit for probability and statistics-related courses.  
+This paper introduces a Monte Carlo-based educational toolkit for probability and statistics-related courses. 
 We have published it as an open-sourced project to benefit a broad range of peer researchers and educators. The toolkit 
 provides an empirical way to solve complex probability problems. It can intuitively illustrate the specific distribution 
 that a particular experiment or test statistic follows. It contains three modules. (1) The “experiments” module provides 
@@ -57,9 +57,8 @@ Based on LLN (Law of Large Numbers), MC can provide a convincing approximation f
 frequency will asymptotically approach its theoretical probability($f \rightarrow p$). The early idea of using LLN can be 
 traced back to the 18th century when French scientist Buffon proposed his famous needle problem. Since the 20th century, 
 digital computers have made the MC method much more helpful and popular. MC has been used in many theoretical research 
-and engineering domains, e.g., optics [@bib1], radiation research, nuclear physics, 
-medicine, materials science, quality management, supply chain, software
-engineering, etc.
+and engineering domains, e.g., optics [@bib1; @bib2], radiation research [@bib3], nuclear physics [@bib4], medicine [@bib5], 
+materials science [@bib6; @bib7], quality management [@bib8], supply chain [@bib9], software engineering [@bib10], etc.
 
 As higher education teachers, we found the MC method a powerful and promising didactic tool. This paper introduces an 
 MC-aided educational toolkit for probability and statistics-related courses and studies. The project was initiated in 
@@ -101,10 +100,10 @@ e.g., the $\chi^{2}$ statistic in Pearson's chi-squared GOF test, ANOVA's F stat
 |                | Galton_Board | Use the classic Galton board experiment to produce a binomial distribution. |
 |                | Paper_Clips | Use the paper clip experiment to create a Zipf distribution. |
 |                | Sudden_Death | This class simulates a sudden death game to make the exponential distribution. |
-||
+|----------|-------|-------------|
 | mc.distributions | Poisson | This class will demonstrate that Poisson is a limit distribution of *b(n,p)* when *n* is large and *p* is small. |
 |                  | Benford | Verify Benford's law using real-life datasets, including the stock market data, international trade data, and the Fibonacci series. |
-||
+|----------|-------|-------------|
 |                | Clt | Using various underlying distributions to verify the central limit theorem. This class provides the following underlying distributions: <br>“uniform” - a uniform distribution U(-1,1); <br>“expon” - an exponential distribution Expon(1); <br>“poisson” - Poisson distribution $\pi(1)$; <br>“coin” - Bernoulli distribution with $p = 0.5$; <br>“tampered_coin” - PMF:{0:0.2,1:0.8}, i.e., head more likely than tail; <br>“dice” - PMF:{1:1/6,2:1/6,3:1/6,4:1/6,5:1/6,6:1/6}; <br>“tampered_dice” - PMF: {1:0.1,2:0.1,3:0.1,4:0.1,5:0.1,6:0.5}, i.e., 6 is more likely. |
 |                | T_Test | This class constructs an r.v. (random variable) following the t distribution. |
 |                | Chisq_Gof_Test | Verify the statistic used in Pearson's Chi-Square Goodness-of-Fit test follows the $\chi^2$ distribution. |
@@ -129,7 +128,7 @@ experiment. Here, we will demonstrate the locker puzzle.
 
 ### The Locker Puzzle
 
-The "hundred-prisoner puzzle" or "the locker puzzle" was first addressed by Danish scientist Peter Bro Miltersen. 
+The "hundred-prisoner puzzle" or "the locker puzzle" was first addressed by Danish scientist Peter Bro Miltersen [@bib12; @bib13]. 
 In this puzzle, there are 100 lockers containing No.1 to No.100. In each round, one prisoner will open 50 lockers. 
 The game will continue if his/her number is found inside any of the opened lockers. Otherwise, the game is over, and all 
 prisoners will be executed. The prisoners cannot communicate with each other during the game. What are the best strategy 
@@ -139,7 +138,7 @@ With no strategy (becomes a repeated Bernoulli experiment), the survival probabi
 is virtually 0. According to the authors, the best strategy is the "circular chain," i.e., the prisoner first opens the 
 locker of their number then opens the locker whose number is inside the last locker. With this strategy, the survival 
 probability equals the probability of creating circular chains no longer than 50. This probability is: 
-$$p=1-\frac{1}{100!}\sum_{l=51}^{100}\left(\frac{1}{l}\times100!\right)=1-\sum_{l=51}^{100}\frac{1}{l}=1-0.688=0.312$$
+$p=1-\frac{1}{100!}\sum_{l=51}^{100}\left(\frac{1}{l}\times100!\right)=1-\sum_{l=51}^{100}\frac{1}{l}=1-0.688=0.312$.
 Furthermore, if we increase the total prisoner number, we can prove that this probability will converge to $1-ln2$ (0.307).
 
 The Prisoners class simulates this experiment, and users can get the survival chance plot against different prisoner 
@@ -153,7 +152,8 @@ Prisoners(n=100,N=2000).run()
 ```
 
 ``` {.python language="python"}
-Prisoners.asymptotic_analysis(ns=[250,500,750,1000,1250,1500,1750,2000], repeat=10, SD=1,N = 1000)
+Prisoners.asymptotic_analysis(ns=[250,500,750,1000,1250,1500,1750,2000], 
+                              repeat=10, SD=1,N = 1000)
     # ns : prisoner numbers to be tested.
     # repeat : repeat multiple times to calculate the SD (standard deviation).
     # SD : how many SD (standard deviation) to show in the error bar chart.
@@ -176,7 +176,7 @@ Here, we will demonstrate the Benford distribution.
 ### Benford Distribution
 
 The Benford law, a.k.a. the Newcomb-Benford law or the first-digit law, describes the PMF of leading digits in many 
-real-life financial and social data. In essence, the natural or social processes that follow the power laws 
+real-life financial and social data [@bib15]. In essence, the natural or social processes that follow the power laws 
 (very common) often demonstrate this distribution. Financial audits often use it to check faked or manipulated data. The
 Benford PMF is as follows (Table 2).
 
@@ -195,7 +195,8 @@ uses the Fibonacci series.
 Benford(data='stock',N=1000).run()
     # data : data set to be used.
     #  'stock' - use 20-year stock trading volume data of Apple Inc. (AAPL)
-    #  'trade' - use annual trade data from various countries. https://comtrade.un.org/data/mbs
+    #  'trade' - use annual trade data from various countries. 
+    #            https://comtrade.un.org/data/mbs
     #  'fibonacci' - use the top-N fibonacci series.    
     # N : how many MC experiments to run.
 ```
@@ -238,7 +239,8 @@ to the theoretical $\chi^2(k-1)$ distribution.
 
 ``` {.python language="python"}
 Chisq_Gof_Stat(underlying_dist='binom',k=8,sample_size=100,N=10000).run()
-    # underlying_dist : what kind of population dist to use. By default, we use binom, i.e., the Galton board.
+    # underlying_dist : what kind of population dist to use. By default, 
+    #                   we use binom, i.e., the Galton board.
     #   'binom'/'galton' - the population is binom.
     #   'dice' - 6 * 1/6.
     # k : classes in the PMF.
@@ -287,9 +289,8 @@ distribution.</h4>
 The Hotelling's $T^2$ test compares the mean of two multivariate populations. Suppose we have two groups of samples from
 $N(\mu_{1},\sum)$ and $N(\mu_{2},\sum)$. They share the same covariance matrix $\sum$. The null hypothesis is 
 $H_{0}: \mu_{1}=\mu_{2}$ and the test statistic is: 
-$$T^2=n(\overline{x}-\mu)^{T}S^{-1}(\overline{x}-\mu)$$
-S is the grand covariance matrix:    
-$$S=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})(x_{i}-\overline{x})^T$$ 
+$$T^2=n(\overline{x}-\mu)^{T}S^{-1}(\overline{x}-\mu)$$     
+$S=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})(x_{i}-\overline{x})^T$ is the grand covariance matrix.
 
 If the dimensionality $k = 1$, Hotelling's $T^2$ degenerates into the t distribution. When $k \geq 2$, it is a multivariate 
 generalization of the t distribution. The Hotelling_T2_Test class verifies the $T^2$ sampling distribution (Figure 6).
