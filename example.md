@@ -128,7 +128,7 @@ experiment. Here, we will demonstrate the locker puzzle.
 
 ### The Locker Puzzle
 
-The "hundred-prisoner puzzle" or "the locker puzzle" was first addressed by Danish scientist Peter Bro Miltersen [@bib12; @bib13]. 
+The "hundred-prisoner puzzle" or "the locker puzzle" was first addressed by Danish scientist Peter Bro Miltersen [@bib11; @bib12]. 
 In this puzzle, there are 100 lockers containing No.1 to No.100. In each round, one prisoner will open 50 lockers. 
 The game will continue if his/her number is found inside any of the opened lockers. Otherwise, the game is over, and all 
 prisoners will be executed. The prisoners cannot communicate with each other during the game. What are the best strategy 
@@ -176,7 +176,7 @@ Here, we will demonstrate the Benford distribution.
 ### Benford Distribution
 
 The Benford law, a.k.a. the Newcomb-Benford law or the first-digit law, describes the PMF of leading digits in many 
-real-life financial and social data [@bib15]. In essence, the natural or social processes that follow the power laws 
+real-life financial and social data [@bib13]. In essence, the natural or social processes that follow the power laws 
 (very common) often demonstrate this distribution. Financial audits often use it to check faked or manipulated data. The
 Benford PMF is as follows (Table 2).
 
