@@ -87,7 +87,7 @@ are provided for comparison. The third module illustrates the sampling distribut
 e.g., the $\chi^{2}$ statistic in Pearson's chi-squared GOF test, ANOVA's F statistic, etc.
 
 | Module | Class | Description |
-|----------|-------|-------------|
+|------|-------|------------------------------|
 | mc.experiments | Pi | Perform Buffon's needle experiment to estimate $\pi$. |
 |                | Parcel | Simulate a bi-directional parcel passing game. |
 |                | Dices | Estimate the probabilities of various dice combinations. |
