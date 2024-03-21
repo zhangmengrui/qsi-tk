@@ -291,7 +291,7 @@ of the People's Republic of China (2023YFD1000400).
 # Data Availability Statement
 
 The source code is hosted on GitHub: https://github.com/zhangys11/mc.  
-License: Apache License 2.0 
+License: Apache License 2.0  
 The CodeOcean reproducible Capsule is published at: https://doi.org/10.24433/CO.4921884.v2.
 
 # References
